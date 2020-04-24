@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--參考:https://forums.taleworlds.com/index.php?threads/adding-companions-wanderers-research-and-development.406014/#post-9308561
+建議利用dnSpy去找在dll裡的標籤
+-->
+
+<!--節點 NPCCharacters開頭-->
+<NPCCharacters>
+
+  <!--NPC 範例: 野獸獵人-->
+  <!-- 
+    NPC |標籤
+    id | 程式中識別ID
+    name{=文本翻譯用亂數代號} 角色名字 
+           - 身份為Wanderer 通常是後綴稱號
+           
+    voice | 聲調
+           - curt ironic softspoken earnest
+           
+    age | 年齡 ( Wanderer 不適用)
+    default_group | 預設隊伍群組
+          - Infantry, Cavalry, Ranged, HorseArcher, 
+             Skinrmisher (?), HeavyInfantry (?), LightCavalry (?), HeavyCavalry (?)
+          
+     is_template | 是否為範例 (遊戲會以這角色資訊, 產生新隨機角色)
+     is_hero | 是否為英雄
+     is_female | 是否為女性
+     culture 文化
+            - Culture.*   *替換為 empire, sturgia, battania, vlandia, aserai, khuzait
+
+     Occupation 身份
+            - NotAssigned                      無身份/不會存在於世界
+            - Lord                                     領主
+            - Wanderer                            流浪者/可招募同伴
+            - Headman, RuralNotable [村莊]頭領/地主
+            - Artisan, Merchant             [城鎮] 工藝師, 商人
+            - GangLeader                       [城鎮] 幫派領袖
+            - Preacher                              [城鎮?]傳道者?
+            - Outlaw                                法外者
+            
+     civilianTemplate 市民服裝範例
+     battleTemplate 戰鬥服裝範例
+     skill_template 技能配點範例
+     
+     banner_symbol_color 旗幟顏色
+            - Hex Color Html六位數顏色代碼
+  -->
+  <NPCCharacter id ="spc_wanderer_template_1_tbh"
+                  name="{=TUAZmuPgEN}the Beast Hunter"
+                  voice="curt"
+                  age="25"
+                  default_group="Archer"
+                  is_template="true"
+                  is_female="false"
+                  is_hero="true"
+                  culture="Culture.battania"
+                  occupation="Wanderer">
+    
+    <!-- 身體資訊-->
+    <face>
+      <!--
+      <face_key_template value="生成標籤">
+      
+      生成標籤:
+        NPCCharacter.townswoman_文化英文名稱
+        NPCCharacter.villager_文化英文名稱
+      
+      只想用預設村民臉生成用下面這段，去掉註解括號-->
+      <!--
+        <face_key_template value="NPCCharacter.townswoman_battania"
+       -->
+      <!--*************************************-->
+      <!--人物代碼替換用下面這段-->
+      <BodyProperties version="4" age="21" weight="0.983" build="0.7608"  key="0028B80FC000000D65A64F84794B805F81EB86785423DA86967B971A677327560E0BF6E2075888C900000000000000000000000000000000000000006E042082"  />
+      <!--可改項目：
+      age 年齡,流浪者(Wanderer)無效
+      weight 體重,流浪者(Wanderer)無效?
+      build 肌肉型態,流浪者(Wanderer)無效?
+      voice 聲調, 同NPCCharacter的註解
+      -->
+      
+      <!--額外指定臉部特徵-->
+      <!--頭髮-->
+      <hair_tags>
+        <!--
+        **可以在 TaleWorlds.CampaignSystem.FacesMaleHair , TaleWorlds.CampaignSystem.FacesFemaleHair 找到對應標籤
+        
+        <hair_tag name ="***"/>
+        <hair_tag value ="數字"/>?
+        
+        標籤名稱(男) 應有24個
+           Bald, Ponytail, LongAndBushy, TiedAcrossBack, SlickedShort,
+           PartedAndCombedBack,Tousled, BraidedAndLong, Short, HighPonytail, 
+           Mohawk, PageBoy, Bowl, ShortAndThin, SlickedLong
+           
+           還有11個標籤??
+           ??,Bobbed
+           
+        標籤名稱(女)
+          Bald, LongOverShoulder, TiedLongOverShoulder, AboveShoulderLength, TiedInBack, 
+          BraidedInBack, ShoulderLengthTied, Short, Cornrows, CornrowMohawk, 
+          BraidedAboveEars, Ukrainian, VeryShort, Resting_on_shoulders, Bobbed
+          
+          Nohair, Short, Middle, Long
+          ShortAndThin, Ukrainian
+        -->
+        <!--<hair_tag name="ShortAndThin" />-->
+        <hair_tag value="17"/>
+      </hair_tags>
+
+      <!--鬍子-->
+      <beard_tags>
+        <!--
+        **可以在 TaleWorlds.CampaignSystem.FacesMaleFacialHair 找到對應標籤
+          
+          <beard_tag name = "標籤名稱"/>
+          
+          標籤名稱
+          NoBeard (Cleanshaven), ThinMustache, MustacheAndPatch,MediumMustache,WaxedMustache,DrooptyMustache,
+          LightGoatee, BushyGoatee, WaxedBreadWithShavedCheeks, BeardWithShavedCheeks, TrimmedDutch, Sideburns,
+          MediumDutch, LightShortBeard, HeavyShortBeard, PointedShortBeard, LightBeard, HeavyLongBeard, LongScragglyBeard, LongTiedBeard,
+          DroopingMustacheAndBeard, TiedBeardShavenCheeks, DutchTiedBeard
+         -->
+        <beard_tag name ="NoBeard"/>
+      </beard_tags>
+      <!--刺青
+      <TattooTags/>
+      -->
+
+    </face>
+
+    <!--角色技能等級
+          <skill id="技能名稱" value="等級"/>
+          ID標籤:
+          VIG    | OneHanded, TwoHanded, Polearm
+          CTR   | Bow, Crossbow, Throwing
+          END  | Riding, Athletics, Crafting
+          CNG | Scouting, Tactics, Roguery
+          SOC  | Charm, Leadership, Trade
+          INT   |  Steward, Medicine, Engineering
+          
+          這部分會被 Traits 的 技能類標籤 影響
+    -->
+    <skills>
+      <skill id="Medicine" value="5" />
+    </skills>
+    
+    <!--
+    **可以在 TaleWorlds.CampaignSystem.DefaultPerks 找到對應標籤
+    **尚未測驗標籤是否有效
+    
+    <perks>
+      <perk id="" value="" />
+    </perks>
+    -->
+    
+    <!-- 特徵
+      可以在動態庫(DLL) TaleWorlds.CampaignSystem.DefaultTraits 中找到對應標籤
+      
+      <Trait id="Trait name" value="level" />
+      
+      ID標籤:
+      > 裝備類
+      數值範圍 1~1, 沒有就不打上此類標籤
+        WandererEquipment 流浪者
+        GentryEquipment 紳士/貴族
+        
+      >髮型類
+      數值範圍 1~1, 沒有指定就不打上此類標籤
+         RomanHair 帝國髮型
+         ArabianHair 阿賽萊髮型
+         RusHair 	斯特吉亞髮型
+         FrankishHair 弗蘭迪亞髮型
+         CelticHair 巴旦尼亞髮型
+         SteppeHair 	庫賽特髮型
+      
+      > 體型類
+      數值範圍 1~1, 沒有指定就不打上此類標籤
+        LightBuild 瘦
+        MuscularBuild 肌肉
+        HeavyBuild 重?
+        OutOfShapeBuild 肥?
+      
+      > 戰鬥技能類
+      數值範圍 1~10, 會影響Skills
+        BalancedFightingSkills 平衡戰鬥技能配置
+        ArcherFightingSkills  射手戰鬥技能配置
+        HorseArcherFightingSkills 射手戰鬥技能配置
+        KnightFightingSkills 騎士戰鬥技能配置
+        HorseArcherFightingSkills 射騎戰鬥技能配置
+        HuscarlFightingSkills 投擲戰鬥技能配置
+        HopliteFightingSkills  重裝戰鬥技能配置
+        PeltastFightingSkills 輕盾兵戰鬥技能配置
+        CrossbowmanStyle 弩手戰鬥技能配置
+        HillScoutSkills 山丘偵查技能配置
+        WoodsScoutSkills 森林偵查技能配置
+        DesertScoutSkills 沙漠偵查技能配置
+        RogueSkills 掠奪技能配置
+        SergeantCommandSkills ??
+        EngineerSkills ??
+        BossFightingSkills ??
+
+      > 技能派生類 (數值範圍 1~10)
+        Surgery 醫生?
+        Tracking ?
+        Commander 指揮官
+        Blacksmith 鐵匠
+        Politician 政治家
+        Manager 管家
+        Fighter 戰士
+        
+      > 角色特性
+        <個人特徵>
+        數值範圍 -2~+2, 或者用1 (可能是普通等級)表示
+          標籤名:  (負面 | 正面)
+          Valor                警慎  | 大膽
+          Honor               狡詐 | 誠實
+          Mercy               殘忍  | 仁慈
+          Calculating      善變 | 理性
+          Generosity       吝嗇 | 慷慨
+
+      <政治傾向>
+      數值範圍 1~1, 沒有傾向就不打上此類標籤
+        Egalitarian      平等主義
+        Oligarchic       寡頭政治
+        Authoritarian 獨裁政治
+     
+     >特別單位類 (未確認效用)
+      Thug, Thief, Gambler, Smuggler
+     
+     > 範本類
+      IsEquipmentTemplate 是否為裝備範本
+     
+     >未確認
+       IsMercenary
+    -->
+    <Traits>
+      <Trait id="WandererEquipment" value="1" />
+      <Trait id="HeavyBuild" value="1"/>
+      <Trait id="WoodsScoutSkills" value ="2"/>
+      <Trait id="ArcherFightingSkills" value ="2"/>
+      <Trait id="RogueSkills" value="1"/>
+      <Trait id="Valor" value ="1"/>
+      <Trait id="Mercy" value ="-1"/>
+      <Trait id="Generosity" value ="-1"/>
+      <Trait id="Oligarchic" value ="1"/>
+    </Traits>
+
+    <feats>
+      <!--文化加成?
+      <feat id="標籤名稱" value="數值" />
+      數值範圍 1~10
+      
+      標籤:
+      BattanianForestAgility, VlandianBattlePerception, BattanianForestAgility,
+      KhuzaitCavalryAgility, SturgianSnowAgility, AseraiCheapCaravans, EmpireConstructionExpert
+      -->
+    </feats>
+    
+    <!--角色定裝
+    <equipmentSet civilian="布林值">
+      <equipment slot="欄位標籤ID" id="物品ID" />
+    </equipmentSet>
+    
+    沒有指定 civilianTemplate和battleTemplate的話,需要用這個標籤指定服裝
+    請參考 SandBoxCore/ModuleData/spitems.xml 這文件看指定服裝ID
+    
+    欄位標籤:
+    左方欄位(衣物)  Head, Cape, Body, Leg, Gloves
+    右方欄位(武器)  Item0~3
+    馬                         Horse, HorseHarness
+    --> 
+    <!--戰鬥服裝-->
+    <equipmentSet>
+      <equipment slot="Item0" id="Item.hunting_bow" />
+      <equipment slot="Item1" id="Item.piercing_arrows" />
+      <equipment slot="Item2" id="Item.seax" />
+      <equipment slot="Body" id="Item.battania_civil_b"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+      <equipment slot="Gloves" id="Item.leather_gloves" />
+    </equipmentSet >
+    <!--市民服裝-->
+    <equipmentSet civilian="true">
+      <equipment slot="Item0" id="Item.seax" />
+      <equipment slot="Body" id="Item.battania_civil_b"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+    </equipmentSet>
+  </NPCCharacter>
+
+  <NPCCharacter id ="spc_wanderer_template_2_tbh"
+                  name="{=TUAZmuPgEN}the Beast Hunter"
+                  voice="curt"
+                  age="25"
+                  default_group="Archer"
+                  is_template="true"
+                  is_female="false"
+                  is_hero="true"
+                  culture="Culture.aserai"
+                  occupation="Wanderer">
+
+    <!-- 身體資訊-->
+    <face>
+      <BodyProperties version="4" age="21" weight="0.983" build="0.7608"  key="0028B80FC000000D65A64F84794B805F81EB86785423DA86967B971A677327560E0BF6E2075888C900000000000000000000000000000000000000006E042082"  />
+      <hair_tags>
+        <hair_tag name="ShortAndThin" />
+      </hair_tags>
+
+      <!--鬍子-->
+      <beard_tags>
+        <beard_tag name ="NoBeard"/>
+      </beard_tags>
+    </face>
+
+    <skills>
+      <skill id="Medicine" value="5" />
+    </skills>
+
+    <Traits>
+      <Trait id="WandererEquipment" value="1" />
+      <Trait id="WoodsScoutSkills" value ="2"/>
+      <Trait id="ArcherFightingSkills" value ="2"/>
+      <Trait id="RogueSkills" value="1"/>
+      <Trait id="Valor" value ="1"/>
+      <Trait id="Mercy" value ="-1"/>
+      <Trait id="Generosity" value ="-1"/>
+      <Trait id="Oligarchic" value ="1"/>
+    </Traits>
+
+    <!--戰鬥服裝-->
+    <equipmentSet>
+      <equipment slot="Item0" id="Item.hunting_bow" />
+      <equipment slot="Item1" id="Item.piercing_arrows" />
+      <equipment slot="Item2" id="Item.seax" />
+      <equipment slot="Body" id="Item.battania_civil_b"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+      <equipment slot="Gloves" id="Item.leather_gloves" />
+    </equipmentSet >
+    <!--市民服裝-->
+    <equipmentSet civilian="true">
+      <equipment slot="Item0" id="Item.seax" />
+      <equipment slot="Body" id="Item.battania_civil_b"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+      <equipment slot="Leg" id="strapped_leather_boots"/>
+    </equipmentSet>
+  </NPCCharacter>
+  
+</NPCCharacters>
+<!--節點 NPCCharacters結束-->

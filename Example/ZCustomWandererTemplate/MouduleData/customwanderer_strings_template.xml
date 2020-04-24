@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <strings>
+    <!-- 開頭故事 我的名字是[玩家名稱],告訴我你的故事 選項之後-->
+    <!--你是否聽過年輕的野獸獵人, 有關青少年射倒一個巨大棕熊的故事?對，那就是我。村子裡的人都這麼稱呼我的-->
+    <string id="prebackstory.spc_template_wanderer_1_tbh" text="{=vdU42Q1x79}Have you heard a young BEASTER HUNTER, the story of a teenager shooting down a jumbo brown bear?Yes, that's me. The people in the village  call me." />
+    <!--故事階段A-->
+    <!--因為從小就對弓射出箭這件事感興趣，是村子裡數一數二的獵人。為了解決村裡飢荒，決定跟朋友(奴隸?)一起去打獵-->
+    <string id="backstory_a.spc_template_wanderer_1_tbh" text="{=QYWvSWbzZU}I have been interested in bows shot with arrows since I was a child. Is the one of the village best hunters. Then, one time, the village was caught with Starve. The blue blood friend call me to hunt some game in forest with him." />
+    <!--故事階段B-->
+    <!--原本想打些兔子鹿之類的動物，但是不幸地遇上棕熊襲擊。眼看朋友即將被打倒，他精準地射中要害，而棕熊因此倒地-->
+    <string id="backstory_b.spc_template_wanderer_1_tbh" text="{=BTJWv1ZHGM}Unfortunately, noting in forest, like hare or dear. Nothing. But a colossus was coming out. A huge brown bear! Try to slaught my friend. I immediate shot an arrow into it critical viscera. Friend alive, and the bear dead. After that, the folks call me BEASTER HUNTER."/>
+    <!--故事階段C-->
+    <!--之後的幾次打獵，朋友很常分享獵物給村民。但他不以為然，拒絕朋友這種行為. 因為如此而發生一場吵架，慘忍地殺害朋友，而被趕了出來-->
+    <string id="backstory_c.spc_template_wanderer_1_tbh" text="{=KQg2keX1OI}In several hunts since that, we argue with the share. My man tells me I have shared some more to village after back to the village. We start a fight, end with my man dead." />
+    <!--故事階段C的兩種選項-->
+    <string id="response_1.spc_template_wanderer_1_tbh" text="{=c1eBwb03nr}That's... a bad Move. I geuss you lose every things with it." />
+    <string id="response_2.spc_template_wanderer_1_tbh" text="{=4VgvWhWS7c}What a crime! You have to expiate your sin." />
+    <!--故事階段D,結尾-->
+    <string id="backstory_d.spc_template_wanderer_1_tbh" text="{=GxinGkmb14}Right. Then I had been banished from village. But I can keep my seax and bow. And I traveling around, final in this tarvern. Looking for someone hire me to hunt." />
+
+    <string id="prebackstory.spc_template_wanderer_2_tbh" text="{=vdU42Q1x79}Have you heard a young BEASTER HUNTER, the story of a teenager shooting down a jumbo brown bear?Yes, that's me. The people in the village  call me." />
+    <string id="backstory_a.spc_template_wanderer_2_tbh" text="{=QYWvSWbzZU}I have been interested in bows shot with arrows since I was a child. Is the one of the village best hunters. Then, one time, the village was caught with Starve. The blue blood friend call me to hunt some game in forest with him." />
+    <string id="backstory_b.spc_template_wanderer_2_tbh" text="{=BTJWv1ZHGM}Unfortunately, noting in forest, like hare or dear. Nothing. But a colossus was coming out. A huge brown bear! Try to slaught my friend. I immediate shot an arrow into it critical viscera. Friend alive, and the bear dead. After that, the folks call me BEASTER HUNTER."/>
+    <string id="backstory_c.spc_template_wanderer_2_tbh" text="{=KQg2keX1OI}In several hunts since that, we argue with the share. My man tells me I have shared some more to village after back to the village. We start a fight, end with my man dead." />
+    <string id="response_1.spc_template_wanderer_2_tbh" text="{=c1eBwb03nr}That's... a bad Move. I geuss you lose every things with it." />
+    <string id="response_2.spc_template_wanderer_2_tbh" text="{=4VgvWhWS7c}What a crime! You have to expiate your sin." />
+    <string id="backstory_d.spc_template_wanderer_2_tbh" text="{=GxinGkmb14}Right. Then I had been banished from village. But I can keep my seax and bow. And I traveling around, final in this tarvern. Looking for someone hire me to hunt." />
+  </strings>
+  
+</base>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="繁體中文" />
+  </tags>
+  <strings>
+    <string id="vdU42Q1x79" text="你是否聽過年輕的「野獸獵人」 , 有關青少年射倒一個巨大棕熊的故事?對，那就是我。村子裡的人都這麼稱呼我的。" />
+    <string id="QYWvSWbzZU" text="我從小就對弓射出箭這件事感興趣。算是村裡數一數二的獵人。有一次，村裡遇上的飢荒。一個公子哥朋友邀我去森林打些獵物回來"/>
+    <string id="BTJWv1ZHGM" text="很不幸地，森林裡什麼都沒有。野兔、鹿啊，都沒有。但是卻冒出一個龐然來大物，巨大棕熊！正試著宰殺我的朋友。我立刻就射了一箭灌進要害。朋友活著，棕熊死了。 從此村民都叫我「野獸獵人」。" />
+    <string id="KQg2keX1OI" text="在後面幾次的狩獵時，我們因為如何分配而起了爭執。我的兄弟告訴我應該分享一些給村裡。我們因此而打了個架，結束的代價是我兄弟的死。" />
+    <string id="c1eBwb03nr" text="那真是...壞的選擇。我猜你因此賠上了所有東西。" />
+    <string id="4VgvWhWS7c" text="這樣是犯罪！你必須為此贖罪。" />
+    <string id="GxinGkmb14" text="對，然後我就被趕出了村莊。但是我可以保留我的小刀和弓。所以我到處旅行，最後在這個旅店。找尋需要我去狩獵的人。" />
+  </strings>
+</base>

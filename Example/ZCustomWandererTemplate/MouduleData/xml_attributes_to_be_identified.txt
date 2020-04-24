@@ -1,0 +1,2 @@
+ZCustomWandererTemplate/ModuleData/customwanderer_template.xml: NPCCharacters.NPCCharacter.name
+ZCustomWandererTemplate/ModuleData/customwanderer_strings_template.xml: base.strings.string.text
